@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Village</title>
+    <link rel="shortcut icon" href="../images/11zon_cropped.png " type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrab/bootstrap.min.css">
+    <link rel="stylesheet" href="../website pages/stylebutten.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* تنسيق زر الرجوع للأعلى الذي سيتجاوز أي تنسيقات أخرى */
+        #backToTop {
+            display: none !important;
+            /* سيتم تغييره إلى flex بواسطة JavaScript */
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            width: 50px !important;
+            height: 50px !important;
+            background-color: #4f46e5 !important;
+            color: white !important;
+            border-radius: 50% !important;
+            text-align: center !important;
+            font-size: 24px !important;
+            line-height: 50px !important;
+            text-decoration: none !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 99999 !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        #backToTop:hover {
+            background-color: #7c3aed !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modern Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand nav-link active" href="home.html">
+                Smart Village
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../website pages/main/about/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../website pages/main/about/ser.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../website pages/main/about/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Rest of your content -->
+    <div class="container main-content">
+        <h1 class="page-header">Meet Our Talented Individuals</h1>
+        <div class="talent-grid">
+            <!-- Talent Card 1 -->
+            <div class="talent-card">
+                <img src="../images/pro.png" alt="Talent 1">
+                <h3>Programming</h3>
+                <p>Programming To explore , click To explore more about </p>
+                <a href="https://www.codecademy.com/" class="btn">Explor to Programming </a>
+            </div>
+            <!-- Talent Card 2 -->
+            <div class="talent-card">
+                <img src="../images/sport.png" alt="Talent 2">
+                <h3>Sport</h3>
+                <p>Football To explore , click To explore more about football </p>
+                <a href="https://mypersonalfootballcoach.com/learn-how-to-play-soccer-the-first-technical-football-steps/"
+                    class="btn">Explore more about Football</a>
+            </div>
+            <div class="talent-card">
+                <img src="../images/playing.png" alt="Talent 2">
+                <h3>Playing musical instruments</h3>
+                <p>Playing musical instruments, click To explore more about Playing musical instruments</p>
+                <a href="https://soundfly.com/courses#play" class="btn">more about Playing musical instruments</a>
+            </div>
+            <div class="talent-card">
+                <img src="../images/bak.png" alt="Talent 2">
+                <h3>Easy Baking</h3>
+                <p>Easy Baking, click To explore more about Easy Baking</p>
+                <a href="https://cooking.nytimes.com/" class="btn"> more about Easy Baking</a>
+            </div>
+            <div class="talent-card">
+                <img src="../images/drow.png" alt="Talent 2">
+                <h3>Visual Arts</h3>
+                <p>Visual Arts, click To explore more about Visual Arts</p>
+                <a href="https://www.skillshare.com/en/browse/drawing-inking?fbclid=IwAR0CTyCuQxxO0XXSmWxIIwdgdoOwfIDtnqDyiNPbM3xr-5MjXqpB4oOuzx0"
+                    class="btn">more about Visual Arts</a>
+            </div>
+            <div class="talent-card">
+                <img src="../images/ai.png" alt="Talent 2">
+                <h3>AI Tools</h3>
+                <p>AI Tools, click To explore more about AI Tools</p>
+                <a href="https://ar.solutions.openlearning.com/#:~:text=OpenLearning%3A%20%D9%85%D9%86%D8%B5%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%85%20%D9%85%D8%AF%D9%89%20%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D8%B9%D9%88%D9%85%D8%A9%20%D9%85%D9%86%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A"
+                    class="btn">more about AI Tools</a>
+            </div>
+
+            <!-- Add more talent cards as needed -->
+        </div>
+    </div>
+
+    <!-- Your existing footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Smart Village is dedicated to empowering talents and fostering creativity in our community.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="../website pages/main/about/about.html">About</a></li>
+                    <li><a href="../website pages/main/about/ser.html">Services</a></li>
+                    <li><a href="../website pages/main/about/contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@smartvillage.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Smart Street, Digital City</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Smart Village. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- زر الرجوع للأعلى بتصميم بسيط وفعال -->
+    <a href="#" id="backToTop" title="العودة للأعلى">↑</a>
+
+    <script src="../bootstrab/bootstrap.bundle.min.js"></script>
+    <script>
+        // كود محسن للزر
+        window.onload = function () {
+            // الحصول على الزر
+            var backToTopBtn = document.getElementById("backToTop");
+
+            // إخفاء الزر في البداية
+            backToTopBtn.style.display = "none";
+
+            // إظهار/إخفاء الزر عند التمرير
+            window.onscroll = function () {
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    backToTopBtn.style.display = "flex";
+                } else {
+                    backToTopBtn.style.display = "none";
+                }
+            };
+
+            // عند النقر على الزر
+            backToTopBtn.onclick = function (e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+                return false;
+            };
+        };
+    </script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talent Discovery Hub</title>
+  <link rel="shortcut icon" href="../../../images/11zon_cropped.png " type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* تحديث ألوان الصفحة بالكامل */
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .navbar {
+      background: #2c3e50;
+    }
+
+    .services {
+      background: #fff;
+    }
+
+    .service-card {
+      background: #2c3e50;
+    }
+
+    .service-card i {
+      color: #fff;
+    }
+
+    .service-card h3 {
+      color: #fff;
+    }
+
+    .service-card p {
+      color: #e0e0e0;
+    }
+
+    .section-title {
+      color: #2c3e50;
+    }
+
+
+
+    /* تأثيرات التحويم */
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* تأكيد من أن كل العناصر لديها transition */
+    * {
+      transition: all 0.3s ease;
+    }
+
+    /* تطبيق المتغيرات */
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .navbar {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+    }
+
+    .services {
+      background: var(--bg-secondary);
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+
+    .section-description {
+      color: var(--text-secondary);
+    }
+
+
+
+    body.darkmode .service-card:hover {
+      background: #404040;
+    }
+
+    /* تحديث خلفية قسم الخدمات */
+    .services {
+      background: #f5f5f5;
+      padding: 50px 0;
+    }
+
+    body.darkmode .services {
+      background: #1a1a1a;
+    }
+
+    /* تحديث عنوان القسم */
+    .section-title {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    body.darkmode .section-title {
+      color: #4CAF50;
+    }
+
+    /* النافبار */
+    .nav-links a {
+      color: var(--nav-text);
+    }
+
+    .dark-mode-toggle {
+      color: var(--nav-text);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        background: var(--nav-bg);
+      }
+
+      .menu-toggle {
+        color: var(--nav-text);
+      }
+    }
+
+    /* تحديث الأزرار */
+    .btn {
+      background: var(--nav-bg);
+      color: var(--nav-text);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* تحديث الروابط */
+    a {
+      color: var(--text-primary);
+    }
+
+    /* تحديث النصوص */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text-primary);
+    }
+
+    /* تحديث المدخلات */
+    input,
+    textarea,
+    select {
+      background: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--text-secondary);
+    }
+
+    /* Color variables at the top of the style section */
+    :root {
+      /* Core Colors */
+      --primary: #4f46e5;
+      --secondary: #7c3aed;
+      --accent: #06b6d4;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --background: #030712;
+      --surface: #111827;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+
+      /* Glassmorphism */
+      --glass-background: rgba(17, 24, 39, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-blur: blur(12px);
+
+      /* Gradient */
+      --gradient-primary: linear-gradient(135deg,
+          rgba(79, 70, 229, 1) 0%,
+          rgba(124, 58, 237, 1) 50%,
+          rgba(6, 182, 212, 1) 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f6fa;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background: rgba(44, 62, 80, 0.7);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 15px 0;
+      background: rgba(44, 62, 80, 0.98);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logo i {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 70%;
+    }
+
+    .nav-links a.active {
+      background: rgba(52, 152, 219, 0.2);
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 8px 20px;
+      background: var(--gradient-primary);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Enhanced Main Content Styles */
+    .hero {
+      height: 80vh;
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 0;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      color: white;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease 0.2s;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      animation: fadeInUp 1s ease 0.4s;
+    }
+
+    .hero-btn {
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .primary-btn {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .primary-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: white;
+      padding: 40px 0;
+      margin-top: -50px;
+      position: relative;
+      z-index: 3;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 1.1em;
+    }
+
+    /* Services Grid Enhancement */
+    .services-section {
+      background: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .section-title h2 {
+      font-size: 2.5em;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .service-icon {
+      font-size: 40px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .service-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+
+    .service-description {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .talent-features {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .talent-features li {
+      margin: 15px 0;
+      padding-left: 30px;
+      position: relative;
+      color: #2c3e50;
+    }
+
+    .talent-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #3498db;
+      font-weight: bold;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .testimonials-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .testimonial-card {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .author-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .author-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Enhanced Footer Styles */
+    footer {
+      background: var(--surface);
+      color: white;
+      padding: 80px 0 20px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      opacity: 0.1;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 60px;
+      padding: 0 30px;
+      position: relative;
+    }
+
+    .footer-section {
+      position: relative;
+    }
+
+    .footer-section h3 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
+    }
+
+    .footer-section:hover h3::after {
+      width: 80px;
+    }
+
+    .footer-about p {
+      line-height: 1.8;
+      margin-bottom: 25px;
+      color: #ecf0f1;
+      font-size: 15px;
+    }
+
+    .footer-newsletter {
+      margin-top: 20px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-input:focus {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .newsletter-btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: var(--gradient-primary);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #ecf0f1;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a i {
+      font-size: 14px;
+      color: #3498db;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #3498db;
+      transform: translateX(8px);
+    }
+
+    .footer-links a:hover i {
+      transform: translateX(5px);
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      color: #ecf0f1;
+    }
+
+    .footer-contact i {
+      width: 35px;
+      height: 35px;
+      background: rgba(52, 152, 219, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-contact li:hover i {
+      background: #3498db;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover::before {
+      transform: scale(1);
+    }
+
+    .social-links a:hover i {
+      transform: rotateY(360deg);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #ecf0f1;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      color: #ecf0f1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #3498db;
+    }
+
+    @media (max-width: 1200px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #talents-section {
+      scroll-margin-top: 80px;
+    }
+
+    .nav-cta {
+      padding: 8px 20px !important;
+      background: var(--gradient-primary);
+      border-radius: 20px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark) !important;
+      transform: translateY(-2px);
+    }
+
+    /* تحديث أنماط القائمة المتنقلة */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+        background: rgba(44, 62, 80, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: 0.5s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .menu-toggle.active {
+        transform: rotate(180deg);
+      }
+    }
+
+    /* Update footer responsive styles */
+    @media (max-width: 1200px) {
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+
+      .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-links a {
+        justify-content: center;
+      }
+
+      .footer-contact li {
+        justify-content: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .newsletter-input {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+
+    /* أنماط الوضع المضيء - الافتراضي */
+    body {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    .navbar {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .card {
+      background: #fff;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: #34495e;
+    }
+
+
+
+    @media (max-width: 768px) {
+      body.darkmode .nav-links {
+        background: rgba(44, 62, 80, 0.95);
+      }
+
+      .nav-links {
+        background: rgba(255, 255, 255, 0.95);
+      }
+    }
+
+    /* تحديث ألوان النافبار */
+    .navbar {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .nav-links a {
+      color: #fff;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.8;
+    }
+
+
+
+    .menu-toggle {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        background: rgba(44, 62, 80, 0.95);
+      }
+
+      .nav-links a {
+        color: #fff;
+      }
+    }
+
+    /* الوضع المضيء - الافتراضي */
+    body {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    .navbar {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .services {
+      background: #f5f5f5;
+    }
+
+    .service-card {
+      background: #fff;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card h3 {
+      color: #2c3e50;
+    }
+
+    .service-card p {
+      color: #666;
+    }
+
+    .service-card i {
+      color: #2c3e50;
+    }
+
+    /* Back to Top Button Styles */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      /* تدرج لوني */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      /* جعل الزر دائري */
+      width: 60px;
+      /* عرض الزر */
+      height: 60px;
+      /* ارتفاع الزر */
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      /* ظل أكثر وضوحًا */
+      z-index: 1001;
+      /* تأكد من أن الزر فوق كل شيء */
+      transition: background 0.3s, transform 0.3s;
+      /* إضافة تأثير التحول */
+      font-size: 28px;
+      /* حجم الخط */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backToTop:hover {
+      transform: scale(1.1);
+      /* تكبير الزر عند التمرير فوقه */
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      /* زيادة الظل عند التمرير فوقه */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="../../home.html" class="logo">
+        <i class="fas fa-lightbulb"></i>
+        Smart Village
+      </a>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../../../website pages/home.html">Home</a></li>
+        <li><a href="../../../website pages/main/about/about.html">About</a></li>
+        <li><a href="../../../website pages/main/about/ser.html">Services</a></li>
+        <li><a href="../../../website pages/main/about/contact.html">Contact</a></li>
+        <li><a href="#talents-section" class="nav-cta">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Enhanced Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Your Hidden Potential</h1>
+      <p>Join thousands of individuals who have transformed their careers through our talent discovery platform</p>
+      <div class="hero-buttons">
+        <a href="#talents-section" class="hero-btn primary-btn">Get Started</a>
+        <a href="#learn-more" class="hero-btn secondary-btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">10K+</div>
+        <div class="stat-label">Talents Discovered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Partner Companies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">95%</div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Countries Reached</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="talents-section" class="services-section">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Comprehensive solutions to help you discover, develop, and showcase your talents</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-star service-icon"></i>
+        <h3 class="service-title">Talent Discovery</h3>
+        <p class="service-description">We help you discover your abilities and guide them properly</p>
+        <ul class="talent-features">
+          <li>Skills Assessment</li>
+          <li>Strengths Identification</li>
+          <li>Career Guidance</li>
+          <li>Personal Development Plan</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-graduation-cap service-icon"></i>
+        <h3 class="service-title">Training & Development</h3>
+        <p class="service-description">Specialized training programs to develop your skills</p>
+        <ul class="talent-features">
+          <li>Professional Workshops</li>
+          <li>Practical Training</li>
+          <li>Certified Programs</li>
+          <li>Continuous Support</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-handshake service-icon"></i>
+        <h3 class="service-title">Career Opportunities</h3>
+        <p class="service-description">Connecting you with the best opportunities for your skills</p>
+        <ul class="talent-features">
+          <li>Job Opportunities</li>
+          <li>Collaborative Projects</li>
+          <li>Professional Network</li>
+          <li>Career Consulting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="section-title">
+      <h2>Success Stories</h2>
+      <p>Hear from individuals who have transformed their careers with us</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">"The talent discovery program helped me identify my true potential and guided me
+          towards a career I love."</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <img src="path/to/author1.jpg" alt="John Doe">
+          </div>
+          <div class="author-info">
+            <h4>John Doe</h4>
+            <p>Software Engineer</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add more testimonial cards as needed -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wave">
+      <!-- Add SVG wave pattern here if desired -->
+    </div>
+
+    <div class="footer-content">
+      <div class="footer-section footer-about">
+        <h3>About Us</h3>
+        <p>Discover and develop your talents with our innovative platform. We're dedicated to helping individuals reach
+          their full potential through personalized guidance and opportunities.</p>
+        <div class="footer-newsletter">
+          <h4>Subscribe to Our Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Home</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>About Us</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Services</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Success Stories</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Blog</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Talent Assessment</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Career Guidance</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Skill Development</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Job Placement</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i>Mentorship</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul class="footer-contact">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>123 Innovation Street, Tech City, TC 12345</span>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <span>+1 234 567 8900</span>
+          </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <span>info@talentdiscovery.com</span>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content ">
+        <p class="text-white">&copy; 2024 Talent Discovery. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" style="display: flex;">↑</button>
+
+  <script>
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+      // إزالة تغيير اللون عند التمرير
+      // if (window.scrollY > 100) {
+      //   nav.classList.add('scrolled');
+      // } else {
+      //   nav.classList.remove('scrolled');
+      // }
+    });
+
+    // Animate stats numbers
+    const stats = document.querySelectorAll('.stat-number');
+
+    const animateStats = () => {
+      stats.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        let current = 0;
+        const increment = target / 50;
+        const updateCount = () => {
+          if (current < target) {
+            current += increment;
+            stat.textContent = Math.ceil(current) + (stat.textContent.includes('+') ? '+' : '%');
+            requestAnimationFrame(updateCount);
+          } else {
+            stat.textContent = target + (stat.textContent.includes('+') ? '+' : '%');
+          }
+        }
+        updateCount();
+      });
+    }
+
+    // Trigger animation when stats section is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {  // Check if element exists
+      observer.observe(statsSection);
+    }
+
+    // Smooth scroll for both Get Started buttons
+    document.querySelectorAll('.primary-btn, .nav-cta').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('#talents-section').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // إغلاق القائمة عند النقر على أي رابط
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    // إظهار الزر عند التمرير لأسفل
+    window.addEventListener('scroll', () => {
+      const backToTopButton = document.getElementById('backToTop');
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'flex'; // استخدام flex لتوسيط السهم
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    // العودة إلى الأعلى عند النقر على الزر
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // تأثير سلس عند العودة للأعلى
+      });
+    });
+  </script>
+  <script src="../../../website/js/"></script>
+</body>
+
+</html>
